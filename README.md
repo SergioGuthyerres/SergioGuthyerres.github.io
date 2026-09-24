@@ -1,10 +1,10 @@
-# Portfólio — Sérgio Guthyerres
+# Portfólio de Sérgio Guthyerres
 
 Página estática, sem framework e sem build. Um arquivo `index.html` com CSS e JS embutidos.
 
 ## Publicar no GitHub Pages (grátis, ~5 minutos)
 
-1. **Crie um repositório chamado exatamente `SergioGuthyerres.github.io`** — o nome precisa ser igual ao seu usuário, com `.github.io` no fim. É isso que faz o GitHub servir na raiz do domínio.
+1. **Crie um repositório chamado exatamente `SergioGuthyerres.github.io`**. O nome precisa ser igual ao seu usuário, com `.github.io` no fim. É isso que faz o GitHub servir na raiz do domínio.
 
 2. **Suba os arquivos:**
    ```bash
@@ -24,10 +24,10 @@ A partir daí, todo `git push` republica.
 
 ## Antes de divulgar
 
-- [ ] **Coloque o `curriculo.pdf` na raiz.** O botão "Currículo (PDF)" do topo já aponta para ele. Use o PDF em português que você já tem.
-- [ ] **Confira os links dos projetos** — todos abrem em aba nova.
+- [ ] **Confira o PDF do currículo na raiz.** O botão "Currículo (PDF)" do topo aponta para `CurriculoSergioGuthyerresPT.pdf`. Se você renomear o arquivo, ajuste o link no `index.html`.
+- [ ] **Confira os links dos projetos.** Todos abrem em aba nova.
 - [ ] **Teste no celular.** A página é responsiva, mas veja com seus olhos.
-- [ ] **Passe a URL no [Post Inspector do LinkedIn](https://www.linkedin.com/post-inspector/).** O `github.io` não tem o problema de TLS do `workers.dev`, então aqui o preview deve funcionar — e aí você finalmente consegue um link nos Destaques.
+- [ ] **Passe a URL no [Post Inspector do LinkedIn](https://www.linkedin.com/post-inspector/).** O `github.io` não tem o problema de TLS do `workers.dev`, então aqui o preview deve funcionar, e aí você finalmente consegue um link nos Destaques.
 
 ## Manutenção
 
