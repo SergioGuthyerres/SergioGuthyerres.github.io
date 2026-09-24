@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sérgio Guthyerres — Desenvolvedor Fullstack</title>
+<meta name="description" content="Desenvolvedor fullstack com foco em segurança de aplicações. Python, TypeScript, Django, FastAPI, React e Node. Residente InovaTech (IFPI).">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sérgio Guthyerres">
+<meta property="og:title" content="Sérgio Guthyerres — Desenvolvedor Fullstack">
+<meta property="og:description" content="Fullstack com foco em segurança de aplicações. Python, TypeScript, Django, FastAPI, React e Node. Residente InovaTech (IFPI).">
+<meta property="og:url" content="https://sergioguthyerres.github.io/">
+<meta property="og:image" content="https://sergioguthyerres.github.io/og-portfolio.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sérgio Guthyerres — Desenvolvedor Fullstack">
+<meta name="twitter:description" content="Fullstack com foco em segurança de aplicações.">
+<meta name="twitter:image" content="https://sergioguthyerres.github.io/og-portfolio.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231F3864'/><text x='50' y='70' font-size='58' font-family='system-ui,sans-serif' font-weight='700' fill='white' text-anchor='middle'>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0c1524; --bg-2:#111e33; --card:#13203a; --card-2:#172845;
+  --line:#22355a; --line-soft:#1b2c4c;
+  --fg:#eaf1fb; --fg-2:#a9bfdd; --fg-3:#7b93b8;
+  --accent:#5b9bf5; --accent-2:#8fc0ff; --accent-dim:rgba(91,155,245,.13);
+  --ok:#3ecf8e; --ok-dim:rgba(62,207,142,.14);
+  --warn:#f0b849; --warn-dim:rgba(240,184,73,.14);
+  --mute-dim:rgba(150,170,200,.12);
+  --radius:16px; --maxw:1080px;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.5);
+}
+:root[data-theme="light"]{
+  --bg:#f7f9fc; --bg-2:#eef3fa; --card:#ffffff; --card-2:#f4f7fc;
+  --line:#dde5f0; --line-soft:#e8eef7;
+  --fg:#0f1d33; --fg-2:#41567a; --fg-3:#6b7f9e;
+  --accent:#1F3864; --accent-2:#2c559b; --accent-dim:rgba(31,56,100,.08);
+  --ok:#0f8f5c; --ok-dim:rgba(15,143,92,.10);
+  --warn:#9a6b06; --warn-dim:rgba(154,107,6,.11);
+  --mute-dim:rgba(60,85,120,.09);
+  --shadow:0 1px 2px rgba(20,40,70,.05),0 12px 28px -14px rgba(20,40,70,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.88em}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;gap:28px}
+.brand{font-weight:700;letter-spacing:-.3px;font-size:16px}
+.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:14.5px;color:var(--fg-2)}
+.nav-links a{transition:color .15s}
+.nav-links a:hover{color:var(--fg)}
+.theme-btn{
+  background:var(--card);border:1px solid var(--line);color:var(--fg-2);
+  width:34px;height:34px;border-radius:9px;cursor:pointer;
+  display:grid;place-items:center;transition:all .15s;flex-shrink:0;
+}
+.theme-btn:hover{color:var(--fg);border-color:var(--accent)}
+@media(max-width:720px){.nav-links{display:none}.nav-in{gap:12px}.theme-btn{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:92px 0 68px;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;width:820px;height:820px;border-radius:50%;
+  background:radial-gradient(circle,var(--accent-dim) 0%,transparent 66%);
+  right:-280px;top:-390px;pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;
+  color:var(--accent-2);background:var(--accent-dim);
+  border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);
+  padding:6px 15px;border-radius:999px;margin-bottom:26px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 0 3px var(--ok-dim)}
+h1{font-size:clamp(38px,6.2vw,62px);line-height:1.06;font-weight:800;
+  letter-spacing:-1.8px;margin-bottom:20px}
+h1 .grad{background:linear-gradient(105deg,var(--accent-2),var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,2.2vw,19.5px);color:var(--fg-2);max-width:660px;margin-bottom:34px}
+.lede b{color:var(--fg);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:38px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:11px;
+  font-weight:600;font-size:15px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);transition:all .16s;
+}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:var(--shadow)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="light"] .btn.primary{color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13.5px;color:var(--fg-2);background:var(--card);
+  border:1px solid var(--line-soft);padding:5px 13px;border-radius:999px}
+
+/* ---------- sections ---------- */
+section{padding:66px 0;position:relative}
+.sec-head{margin-bottom:34px}
+.sec-tag{font-size:12.5px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px;display:block}
+h2{font-size:clamp(26px,4vw,34px);font-weight:700;letter-spacing:-.9px;line-height:1.2}
+.sec-sub{color:var(--fg-2);margin-top:10px;max-width:640px;font-size:16.5px}
+
+/* ---------- highlight ---------- */
+.highlight{
+  background:linear-gradient(135deg,var(--card) 0%,var(--card-2) 100%);
+  border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:34px 36px;box-shadow:var(--shadow);
+}
+.hl-label{font-size:12.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px}
+blockquote{font-size:clamp(18px,2.6vw,22px);font-weight:600;line-height:1.48;
+  color:var(--fg);margin-bottom:18px}
+.hl-src{font-size:14.5px;color:var(--fg-3);margin-bottom:22px}
+.hl-src b{color:var(--fg-2)}
+.hl-body{font-size:15.5px;color:var(--fg-2);border-top:1px solid var(--line-soft);padding-top:20px}
+.hl-body code{background:var(--mute-dim);padding:2px 7px;border-radius:5px;color:var(--fg)}
+
+/* ---------- grid / cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(318px,1fr));gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);
+  padding:26px 26px 24px;display:flex;flex-direction:column;transition:all .18s;
+}
+.card:hover{border-color:var(--line);transform:translateY(-2px);box-shadow:var(--shadow)}
+.card-top{margin-bottom:11px}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.3px;margin-bottom:11px;line-height:1.3}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.8px;
+  text-transform:uppercase;padding:4px 10px;border-radius:6px;white-space:nowrap}
+.b-live{background:var(--ok-dim);color:var(--ok)}
+.b-wip{background:var(--warn-dim);color:var(--warn)}
+.b-done{background:var(--accent-dim);color:var(--accent-2)}
+:root[data-theme="light"] .b-done{color:var(--accent)}
+.b-mute{background:var(--mute-dim);color:var(--fg-3)}
+.card p{font-size:15px;color:var(--fg-2);flex:1;margin-bottom:16px}
+.card p b{color:var(--fg);font-weight:600}
+.tech{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tech span{font-size:12.5px;color:var(--fg-3);background:var(--mute-dim);
+  padding:3px 10px;border-radius:5px}
+.links{display:flex;gap:16px;font-size:14.5px;font-weight:600;
+  border-top:1px solid var(--line-soft);padding-top:15px;margin-top:auto}
+.links a{color:var(--accent);display:inline-flex;align-items:center;gap:5px;transition:gap .15s}
+.links a:hover{gap:8px}
+.links .off{color:var(--fg-3);font-weight:500}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(var(--accent),var(--line-soft))}
+.tl-item{position:relative;margin-bottom:34px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-30px;top:7px;width:14px;height:14px;
+  border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl-date{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.4px;margin-bottom:4px}
+.tl-role{font-size:18.5px;font-weight:700;letter-spacing:-.3px}
+.tl-org{font-size:15px;color:var(--fg-2);margin:3px 0 6px}
+.tl-note{font-size:13.5px;color:var(--fg-3);font-style:italic;margin-bottom:12px}
+.tl-item ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.tl-item li{font-size:15px;color:var(--fg-2);padding-left:18px;position:relative}
+.tl-item li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:2px;
+  background:var(--accent);border-radius:2px}
+.tl-item li b{color:var(--fg);font-weight:600}
+
+/* ---------- stack ---------- */
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.stack-row{background:var(--card);border:1px solid var(--line-soft);
+  border-radius:12px;padding:18px 20px}
+.stack-row h4{font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:10px}
+.stack-row p{font-size:14.5px;color:var(--fg-2);line-height:1.75}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line-soft);padding:48px 0 40px;margin-top:30px}
+.foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-end}
+.foot-title{font-size:22px;font-weight:700;letter-spacing:-.4px;margin-bottom:8px}
+.foot-sub{color:var(--fg-2);font-size:15.5px;max-width:420px}
+.foot-links{display:flex;gap:10px;flex-wrap:wrap}
+.foot-note{margin-top:34px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-size:13.5px;color:var(--fg-3);display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap}
+@media(max-width:560px){.highlight{padding:26px 22px}.card{padding:22px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="brand">Sérgio<span>.</span></a>
+    <div class="nav-links">
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#stack">Stack</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <button class="theme-btn" id="theme" aria-label="Alternar tema claro e escuro">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path id="ticon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Disponível para vagas remotas</div>
+    <h1>Desenvolvedor fullstack<br><span class="grad">com foco em segurança</span></h1>
+    <p class="lede">
+      Trabalho com <b>Python</b> e <b>TypeScript</b> no ciclo completo de entrega — do levantamento
+      de requisitos junto ao setor demandante até o deploy e os testes automatizados.
+      Hoje sou residente no <b>InovaTech</b>, programa do IFPI que selecionou 15 pessoas entre
+      cerca de 700 inscritos, e escrevo meu TCC sobre <b>criptografia pós-quântica</b> aplicada a APIs REST.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#projetos">Ver projetos</a>
+      <a class="btn" href="https://github.com/SergioGuthyerres" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/guthyerres" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="curriculo.pdf">Currículo (PDF)</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Django</span><span class="chip">FastAPI</span><span class="chip">React</span>
+      <span class="chip">Node · Fastify</span><span class="chip">PostgreSQL</span>
+      <span class="chip">Docker</span><span class="chip">Testes automatizados</span>
+    </div>
+  </div>
+</header>
+
+<section id="destaque">
+  <div class="wrap">
+    <div class="highlight">
+      <div class="hl-label">Reconhecimento público</div>
+      <blockquote>“A Coordenação agradece ao candidato Sergio Guthyerres dos Santos de Morais,
+        que formalizou o questionamento sobre a incompatibilidade do bcrypt.”</blockquote>
+      <div class="hl-src"><b>Nota Técnica Complementar nº 05/2026</b> — Programa InovaTech ·
+        Instituto Federal do Piauí · abril de 2026 —
+        <a href="https://inovatech.ifpi.edu.br/media/publicacoes/2026/04/Nota_Tecnica_05_2026_INOVATECH_1_UOcLNr9.pdf?v=2"
+           target="_blank" rel="noopener" style="color:var(--accent)">ver documento →</a></div>
+      <div class="hl-body">
+        Durante o processo seletivo, identifiquei que o <code>passlib 1.7.4</code> acessa
+        <code>bcrypt.__about__.__version__</code> para detectar a versão — atributo removido a partir do
+        <code>bcrypt 4.0.0</code>, quebrando a autenticação dos projetos base com <code>AttributeError</code>.
+        Reportei formalmente e o IFPI corrigiu as versões de todos os projetos base.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Projetos</span>
+      <h2>O que eu construí</h2>
+      <p class="sec-sub">Cada projeto abaixo tem o estado real declarado — em produção, em desenvolvimento ou pausado.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-live">Em produção</span></div>
+        <h3>Casa do Campo — Estoque</h3>
+        <p>PWA <b>offline-first</b> de controle de estoque, em uso diário em um comércio familiar.
+          Funciona sem internet e sincroniza quando a conexão volta. Tem uma suíte de
+          <b>16 testes automatizados de segurança</b>: anti-enumeração de usuários, controle de acesso
+          por perfil, invalidação de sessão, rate limiting e política de CORS.</p>
+        <div class="tech"><span>React</span><span>Vite</span><span>Dexie · IndexedDB</span><span>Node</span>
+          <span>Express</span><span>Prisma</span><span>SQLite</span><span>Oracle Cloud</span></div>
+        <div class="links">
+          <a href="https://controle-estoque.sergioguthyn.workers.dev/" target="_blank" rel="noopener">Ver no ar →</a>
+          <a href="https://github.com/SergioGuthyerres/CONTROLE-ESTOQUE" target="_blank" rel="noopener">Código →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-wip">TCC · em curso</span></div>
+        <h3>Benchmark de criptografia pós-quântica</h3>
+        <p>Framework experimental <b>open source</b> comparando RSA-2048 e ECDSA P-256 com
+          <b>ML-KEM (Kyber)</b> e <b>ML-DSA (Dilithium)</b> no handshake TLS 1.3. Desenho de 360 execuções —
+          4 grupos criptográficos × 3 cenários de rede × 30 repetições — com análise por teste de Wilcoxon.
+          Tema alinhado à Instrução Normativa ITI nº 35/2026, que traz a criptografia pós-quântica para a ICP-Brasil.</p>
+        <div class="tech"><span>Docker</span><span>OpenSSL 3.x</span><span>liboqs</span><span>FastAPI</span>
+          <span>Locust</span><span>tshark</span><span>Python</span></div>
+        <div class="links"><span class="off">Repositório em breve · licença MIT</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-wip">Em desenvolvimento</span></div>
+        <h3>Certifica</h3>
+        <p>Plataforma de gestão de certificados para eventos. Projeto em equipe no qual respondo pela
+          <b>arquitetura, modelagem de dados, contrato de API e escolha da stack</b>.</p>
+        <div class="tech"><span>FastAPI</span><span>SQLModel</span><span>SQLAlchemy async</span>
+          <span>PostgreSQL 16</span><span>React</span><span>Docker Compose</span></div>
+        <div class="links"><a href="https://github.com/SergioGuthyerres/Certifica" target="_blank" rel="noopener">Código →</a></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-done">Concluído</span></div>
+        <h3>Controle de Eventos — API REST</h3>
+        <p>API REST com <b>documentação completa de engenharia de requisitos</b>: requisitos funcionais e
+          não funcionais, diagrama de casos de uso, modelo entidade-relacionamento e dicionário de dados.</p>
+        <div class="tech"><span>AdonisJS v7</span><span>TypeScript</span><span>Lucid ORM</span>
+          <span>JWT</span><span>PostgreSQL</span></div>
+        <div class="links"><a href="https://github.com/SergioGuthyerres/Controle_de_Eventos-API" target="_blank" rel="noopener">Código →</a></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-mute">Em pausa</span></div>
+        <h3>CodeSurv</h3>
+        <p>Plataforma de desafios de lógica e algoritmos com partidas em tempo real. O código submetido
+          pelos jogadores roda em <b>sandbox isolado</b>, numa instância própria da Piston API hospedada
+          em VM Azure com Ubuntu.</p>
+        <div class="tech"><span>Fastify</span><span>TypeScript</span><span>MongoDB</span>
+          <span>Socket.IO</span><span>Piston API</span><span>Azure</span></div>
+        <div class="links">
+          <a href="https://github.com/SergioGuthyerres/CodeSurv-Backend" target="_blank" rel="noopener">Back-end →</a>
+          <a href="https://github.com/SergioGuthyerres/CodeSurv-Frontend" target="_blank" rel="noopener">Front-end →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="badge b-done">Concluído</span></div>
+        <h3>Sonda IoT multiparâmetros</h3>
+        <p>Sonda de monitoramento de qualidade da água desenvolvida durante bolsa PIBIT no IFMA.
+          Integra sensores de pH, turbidez, temperatura, condutividade elétrica, oxigênio dissolvido e TDS,
+          com invólucro prototipado em impressão 3D.</p>
+        <div class="tech"><span>ESP32</span><span>C++</span><span>Sistemas embarcados</span><span>Impressão 3D</span></div>
+        <div class="links"><span class="off">Código privado — em processo de proteção intelectual</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Trajetória</span>
+      <h2>Experiência</h2>
+    </div>
+    <div class="tl">
+
+      <div class="tl-item">
+        <div class="tl-date">MAIO/2026 — ATUAL</div>
+        <div class="tl-role">Residente em Desenvolvimento de Software</div>
+        <div class="tl-org">InovaTech · IFPI · Piauí GovTech · FAIFPI — Teresina, PI</div>
+        <div class="tl-note">Residência em inovação tecnológica, 20h semanais, em regime de bolsa (sem vínculo empregatício).</div>
+        <ul>
+          <li>Desenvolvimento fullstack de funcionalidades completas em squad com <b>papéis rotativos</b>, incluindo atuação como <b>Tech Lead</b>, no modelo Spotify.</li>
+          <li>CRUD completo de bolsas e seus tipos, telas de triagem, de alunos e de upload, em <b>Django, React e PostgreSQL</b>.</li>
+          <li>Armazenamento de documentos em <b>MinIO com URLs assinadas de expiração temporária</b>, e indexação no front e no back.</li>
+          <li>Cobertura das funcionalidades entregues com <b>testes automatizados</b> em Django TestCase.</li>
+          <li>Discovery do produto: visão do sistema, personas, entrevistas e ciclos de validação com o setor demandante.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">AGOSTO/2025 — AGOSTO/2026</div>
+        <div class="tl-role">Bolsista de Iniciação Tecnológica — PIBIT</div>
+        <div class="tl-org">Instituto Federal do Maranhão (IFMA)</div>
+        <ul>
+          <li>Desenvolvimento de sonda IoT multiparâmetros para monitoramento de qualidade da água, com <b>ESP32 e C++</b>.</li>
+          <li>Integração de seis sensores, prototipagem do invólucro em impressão 3D e elaboração do manual de montagem.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">CONCLUSÃO EM JUNHO/2027</div>
+        <div class="tl-role">Tecnologia em Sistemas para Internet</div>
+        <div class="tl-org">Instituto Federal do Maranhão — Campus Timon</div>
+        <ul>
+          <li>TCC: <b>Impacto da Criptografia Pós-Quântica no Desempenho de uma API RESTful</b> — avaliação experimental comparativa com liboqs. Pré-projeto aprovado por comissão avaliadora.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Ferramentas</span>
+      <h2>Stack</h2>
+      <p class="sec-sub">O que aparece aqui tem projeto ou entrega por trás — não é lista de cursos assistidos.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-row"><h4>Linguagens</h4><p>Python · TypeScript · JavaScript · SQL · C++</p></div>
+      <div class="stack-row"><h4>Back-end</h4><p>Django · FastAPI · Node.js · Express · Fastify · AdonisJS · SQLModel · SQLAlchemy async · Prisma · Lucid ORM</p></div>
+      <div class="stack-row"><h4>Front-end</h4><p>React · Vite · Tailwind CSS · PWA e arquitetura offline-first · Socket.IO</p></div>
+      <div class="stack-row"><h4>Dados</h4><p>PostgreSQL · SQLite · MongoDB · IndexedDB (Dexie)</p></div>
+      <div class="stack-row"><h4>Segurança</h4><p>Autenticação JWT · controle de acesso por perfil · gestão e invalidação de sessão · rate limiting · CORS · testes automatizados de segurança</p></div>
+      <div class="stack-row"><h4>Infraestrutura</h4><p>Docker e Docker Compose · Oracle Cloud · Cloudflare Workers · Microsoft Azure · administração de VM Linux · Git</p></div>
+      <div class="stack-row"><h4>Testes</h4><p>node:test · Django TestCase</p></div>
+      <div class="stack-row"><h4>Práticas</h4><p>Scrum (modelo Spotify) · engenharia de requisitos · discovery com stakeholders · documentação técnica · desenvolvimento assistido por IA</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-title">Vamos conversar?</div>
+        <p class="foot-sub">Aberto a oportunidades remotas ou em Teresina. Respondo por e-mail e LinkedIn.</p>
+      </div>
+      <div class="foot-links">
+        <a class="btn primary" href="mailto:guthyerrteresina@gmail.com">E-mail</a>
+        <a class="btn" href="https://linkedin.com/in/guthyerres" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/SergioGuthyerres" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>Sérgio Guthyerres dos Santos de Morais — Teresina, PI · Inglês B2</span>
+      <span>Feito com HTML e CSS, sem framework.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme'), icon=document.getElementById('ticon');
+  var moon="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z";
+  var sun="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4";
+  function apply(t){ root.setAttribute('data-theme',t); icon.setAttribute('d', t==='light'?sun:moon); }
+  var saved=null;
+  try{ saved=localStorage.getItem('tema'); }catch(e){}
+  apply(saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark'));
+  btn.addEventListener('click',function(){
+    var t = root.getAttribute('data-theme')==='light' ? 'dark':'light';
+    apply(t);
+    try{ localStorage.setItem('tema',t); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
